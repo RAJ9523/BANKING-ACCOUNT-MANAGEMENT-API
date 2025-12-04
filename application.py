@@ -64,8 +64,7 @@ def handle_method_not_allowed_error(e):
 
 @app.route('/')
 def redirect_to_prefix():
-    if prefix != '':
-        return redirect(prefix)
+    return {"message":"App is Working"}
 
 
 # ============================================
@@ -74,6 +73,9 @@ def redirect_to_prefix():
 # GET swagger config
 api.add_resource(SwaggerConfig, '/swagger-config')
 # GET Student
+
+
+
 api.add_resource(Accounts, "/accounts")
 api.add_resource(Account, "/accounts/<int:id>")
 api.add_resource(Deposit, "/accounts/deposit")
@@ -88,3 +90,4 @@ api.add_resource(Statement, "/accounts/<int:id>/statement")
 
 if __name__ == '__main__':
     app.run(debug=True)
+
