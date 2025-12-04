@@ -1,7 +1,7 @@
 from flask import Flask, jsonify, redirect
 from flask_restful import Api, MethodNotAllowed, NotFound
 from flask_cors import CORS
-from util.common import domain, port, prefix, build_swagger_config_json
+from common import domain, port, prefix, build_swagger_config_json
 from resources.swaggerConfig import SwaggerConfig
 from bankResource import Accounts, ApplyInterest,Deposit, Statement,Transactions,Account, UpdateCustomer,Withdraw,BlockAccount,CloseAccount,init_db
 from flask_swagger_ui import get_swaggerui_blueprint
@@ -90,4 +90,5 @@ api.add_resource(Statement, "/accounts/<int:id>/statement")
 
 if __name__ == '__main__':
     app.run(debug=True)
+
 
